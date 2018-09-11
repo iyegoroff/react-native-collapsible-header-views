@@ -15,7 +15,7 @@ ScrollView, FlatList, SectionList with collapsible headers + HOC for wrapping cu
 
  Android                                       |  iOS
 :---------------------------------------------:|:---------------------------------------------:
-<img src="demo/android.gif" align="left" height="500">  |  <img src="demo/ios.gif" align="right" height="500">
+<img src="https://raw.githubusercontent.com/iyegoroff/react-native-collapsible-header-views/master/demo/android.gif" align="left" height="500">  |  <img src="https://raw.githubusercontent.com/iyegoroff/react-native-collapsible-header-views/master/demo/ios.gif" align="right" height="500">
 
 ## Example
 
