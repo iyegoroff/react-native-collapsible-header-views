@@ -62,10 +62,10 @@ hood.
 Also some of `ScrollView` props have new defaults: `bounces` defaults to `false`, `overScrollMode`
 to `'never'` and `scrollEventThrottle` to `1`.
 
-#### CollapsibleHeaderComponentProps
+#### CollapsibleHeaderProps
 
 - `interpolatedHeaderTranslation: (from: number, to: number) => Animated.AnimatedInterpolation` -
-  creates new `AnimatedInterpolation` object, which input range corresponds to header translation and
+  creates new `AnimatedInterpolation` object, whose input range corresponds to header translation and
   output range is specified by `from` and `to` params. Can be used for custom animations, like setting
   opacity etc.;
 - `showHeader: (options: { animated: boolean } | unknown) => void` - pushes header down with animation
