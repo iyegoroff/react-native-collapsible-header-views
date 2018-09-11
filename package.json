@@ -1,0 +1,35 @@
+{
+  "name": "react-native-collapsible-header-views",
+  "version": "0.0.0",
+  "description": "Set of react-native views with collapsible headers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "preversion": "npm run build",
+    "build": "rm -rf dist && mkdir dist && cp src/index.d.ts dist/index.d.ts && tsc -p src",
+    "watch": "npm run build -- --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "collapsible",
+    "header"
+  ],
+  "author": "iyegoroff <iegoroff@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.13",
+    "@types/react-native": "^0.56.18",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.0.3",
+    "vrsource-tslint-rules": "^5.8.2"
+  },
+  "dependencies": {
+    "fast-memoize": "^2.5.1"
+  }
+}

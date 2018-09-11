@@ -1,0 +1,38 @@
+{
+  "name": "CollapsibleHeaderViewsExample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "postinstall": "metro-with-symlinks",
+    "build": "tsc -p .",
+    "watch": "npm run build -- --watch",
+    "run:android": "npm run clean:android && react-native run-android",
+    "clean:android": "cd android && ./gradlew clean",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-native-collapsible-header-views": "file:../",
+    "react-native-iphone-x-helper": "^1.1.0",
+    "react-navigation": "^2.13.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.13",
+    "@types/react-native": "^0.56.18",
+    "@types/react-navigation": "^2.0.19",
+    "babel-jest": "23.4.2",
+    "babel-preset-react-native": "^5",
+    "jest": "23.5.0",
+    "metro-with-symlinks": "^1.2.0",
+    "react-test-renderer": "16.4.1",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.0.3",
+    "vrsource-tslint-rules": "^5.8.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
