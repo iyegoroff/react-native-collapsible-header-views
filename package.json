@@ -31,5 +31,13 @@
   },
   "dependencies": {
     "fast-memoize": "^2.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/iyegoroff/react-native-collapsible-header-views/issues"
+  },
+  "homepage": "https://github.com/iyegoroff/react-native-collapsible-header-views#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iyegoroff/react-native-collapsible-header-views.git"
   }
 }
