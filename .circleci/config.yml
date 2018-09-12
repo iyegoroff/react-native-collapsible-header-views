@@ -25,7 +25,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: npm pack
+      - run: ls
       # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       # - run: npm publish
 
