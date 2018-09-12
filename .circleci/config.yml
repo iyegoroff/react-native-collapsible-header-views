@@ -20,6 +20,7 @@ jobs:
     docker:
       - image: circleci/node:7.10
     steps:
+      - checkout
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: npm publish
 
