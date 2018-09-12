@@ -15,3 +15,22 @@ jobs:
       - run: npm run build
       - store_artifacts:
           path: dist
+
+  publish:
+    docker:
+      - image: circleci/node:7.10
+    steps:
+      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run: npm publish
+
+workflows:
+  version: 2
+  package:
+    jobs:
+      - build
+      - publish:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /v[0-9]+(\.[0-9]+)*/
