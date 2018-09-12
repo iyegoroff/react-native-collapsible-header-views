@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ScrollViewProps, Animated, FlatListProps, SectionListProps } from 'react-native';
 
 export type InterpolatedHeaderTranslation = (from: number, to: number) => Animated.AnimatedInterpolation;
-export type AnimationConfig = { animated: boolean };
+export type AnimationConfig = { animated?: boolean };
 
 export type CollapsibleHeaderProps = {
   interpolatedHeaderTranslation: InterpolatedHeaderTranslation;

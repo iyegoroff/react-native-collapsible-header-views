@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "postinstall": "metro-with-symlinks",
-    "build": "tsc -p .",
+    "build": "rm -rf build && tsc -p .",
+    "lint": "tslint -p .",
     "watch": "npm run build -- --watch",
     "run:android": "npm run clean:android && react-native run-android",
     "clean:android": "cd android && ./gradlew clean",

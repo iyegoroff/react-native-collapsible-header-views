@@ -12,7 +12,7 @@ import {
 
 const noop = () => { /**/ };
 
-export type AnimationConfig = { animated: boolean };
+export type AnimationConfig = { animated?: boolean };
 
 export type CollapsibleHeaderProps = {
   interpolatedHeaderTranslation: (from: number, to: number) => Animated.AnimatedInterpolation;
@@ -99,7 +99,7 @@ export const withCollapsibleHeader = <T extends ScrollViewProps>(
         headerHeight - statusBarHeight
       );
 
-      this.headerTranslation = this.clampedScroll!.interpolate({
+      this.headerTranslation = this.clampedScroll.interpolate({
         inputRange: [0, headerHeight - statusBarHeight],
         outputRange: [0, -(headerHeight - statusBarHeight)],
         extrapolate: 'clamp'

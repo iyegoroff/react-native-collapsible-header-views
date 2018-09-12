@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm i
+      - run: npm run lint
+      - run: npm run build
+      - run: cd CollapsibleHeaderViewsExample
+      - run: npm i
+      - run: npm run lint
+      - run: npm run build
+

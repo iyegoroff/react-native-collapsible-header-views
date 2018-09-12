@@ -7,6 +7,7 @@
   "scripts": {
     "preversion": "npm run build",
     "build": "rm -rf dist && mkdir dist && cp src/index.d.ts dist/index.d.ts && tsc -p src",
+    "lint": "tslint -p src",
     "watch": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -22,14 +22,14 @@ export const WrappedInstanceMethods = ({ navigation }: NavigationScreenConfigPro
 
   const scrollToTop = () => {
     if (ref.current && ref.current.animatedComponent()) {
-      ref.current.animatedComponent()!
+      ref.current.animatedComponent()
         ._component._listRef._scrollRef.scrollTo({ y: 0, animated: true });
     }
   };
 
   const scrollToBottom = () => {
     if (ref.current && ref.current.animatedComponent()) {
-      ref.current.animatedComponent()!
+      ref.current.animatedComponent()
         ._component._listRef._scrollRef.scrollToEnd({ animataed: true });
     }
   };
