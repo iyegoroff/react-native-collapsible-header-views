@@ -14,9 +14,9 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: dist
           paths:
-            - dist/*
+            - *
 
   publish:
     docker:
@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /tmp/workspace
+          at: dist
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: npm publish
 
