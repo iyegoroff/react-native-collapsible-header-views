@@ -25,9 +25,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: ls
-      # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-      # - run: npm publish
+      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run: npm publish
 
 
 workflows:
@@ -44,5 +43,5 @@ workflows:
           filters:
             tags:
               only: /^v.*/
-            # branches:
-            #   ignore: /.*/
+            branches:
+              ignore: /.*/

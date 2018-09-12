@@ -16,6 +16,11 @@
     "collapsible",
     "header"
   ],
+  "files": [
+    "CollapsibleHeaderViewsExample",
+    "dist",
+    "src"
+  ],
   "author": "iyegoroff <iegoroff@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
