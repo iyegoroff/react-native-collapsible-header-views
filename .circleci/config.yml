@@ -13,13 +13,18 @@ jobs:
       - run: npm i
       - run: npm run lint
       - run: npm run build
-      - store_artifacts:
-          path: dist
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - dist/*
 
   publish:
     docker:
       - image: circleci/node:7.10
     steps:
+      - checkout
+      - attach_workspace:
+          at: /tmp/workspace
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: npm publish
 
