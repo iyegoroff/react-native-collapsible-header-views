@@ -10,11 +10,12 @@
     "run:android": "npm run clean:android && react-native run-android",
     "clean:android": "cd android && ./gradlew clean",
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "reset:packager": "watchman watch-del-all && node_modules/react-native/scripts/packager.sh --reset-cache",
     "test": "jest"
   },
   "dependencies": {
-    "react": "16.4.1",
-    "react-native": "0.56.0",
+    "react": "16.5.1",
+    "react-native": "0.57.0",
     "react-native-collapsible-header-views": "file:../",
     "react-native-iphone-x-helper": "^1.1.0",
     "react-navigation": "^2.13.0"
@@ -24,9 +25,9 @@
     "@types/react-native": "^0.56.18",
     "@types/react-navigation": "^2.0.19",
     "babel-jest": "23.4.2",
-    "babel-preset-react-native": "^5",
     "jest": "23.5.0",
-    "metro-with-symlinks": "^1.2.0",
+    "metro-react-native-babel-preset": "^0.45.2",
+    "metro-with-symlinks": "github:treyp/metro-with-symlinks#rn-47",
     "react-test-renderer": "16.4.1",
     "tslint": "^5.11.0",
     "tslint-config-standard": "^8.0.1",
