@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Fable bindings for react-native-collapsible-header-views</Description>
+    <PackageProjectUrl>https://github.com/iyegoroff/react-native-collapsible-header-views/tree/master/fable-typed</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/iyegoroff/react-native-collapsible-header-views/tree/master/fable-typed</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/iyegoroff/react-native-collapsible-header-views/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageTags>fsharp;fable;react-native;collapsible;header</PackageTags>
+    <Authors>iyegoroff</Authors>
+    <Version>0.0.1</Version>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src\Fable.Import.ReactNativeCollapsibleHeaderViews.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="*.fsproj; *.fs;" PackagePath="fable\" />
+    <Content Include="src\" PackagePath="fable\src\" />
+  </ItemGroup>
+  <Import Project=".paket\Paket.Restore.targets" />
+</Project>
