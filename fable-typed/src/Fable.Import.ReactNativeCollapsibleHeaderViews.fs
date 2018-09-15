@@ -3,6 +3,7 @@ module Fable.Import.ReactNativeCollapsibleHeaderViews
 open Fable.Helpers.React
 open Fable.Import.ReactNative
 open Fable.Helpers.ReactNative.Props
+open Fable.Helpers.ReactNative
 open Fable.Core
 open Fable.Core.JsInterop
 
@@ -17,11 +18,14 @@ module Props =
       showHeader: (AnimationConfig -> unit)
       hideHeader: (AnimationConfig -> unit) }
 
+  type IAnimatedComponent =
+    interface end
+
   type CollapsibleHeaderView =
     inherit React.ComponentClass<ScrollViewProperties>
     abstract showHeader: (AnimationConfig -> unit) with get, set
     abstract hideHeader: (AnimationConfig -> unit) with get, set
-    abstract animatedComponent: (unit -> obj option) with get, set
+    abstract animatedComponent: (unit -> IAnimatedComponent) with get, set
 
   type CollapsibleHeaderViewProps =
     | StatusBarHeight of float
@@ -32,6 +36,9 @@ module Props =
 
 
 open Props
+
+[<Emit("$0 ? ($0._component.scrollTo ? $0._component : $0._component._listRef._scrollRef) : null")>]
+let scrollView (_ref: IAnimatedComponent): ScrollView option = jsNative
 
 let inline collapsibleHeaderScrollView
   (header: (CollapsibleHeaderProps -> React.ReactElement))
