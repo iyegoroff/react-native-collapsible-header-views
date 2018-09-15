@@ -37,7 +37,7 @@ module Props =
 
 open Props
 
-[<Emit("$0 ? ($0._component.scrollTo ? $0._component : $0._component._listRef._scrollRef) : null")>]
+[<Emit("($0 && $0._component) ? ($0._component.scrollTo ? $0._component : ($0._component._listRef ? $0._component._listRef._scrollRef : $0._component._wrapperListRef._listRef._scrollRef)) : null")>]
 let scrollView (_ref: IAnimatedComponent): ScrollView option = jsNative
 
 let inline collapsibleHeaderScrollView
