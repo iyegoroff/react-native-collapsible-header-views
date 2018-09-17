@@ -4,8 +4,6 @@ import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-nativ
 import { CollapsibleHeaderFlatList } from 'react-native-collapsible-header-views';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-const keyExtractor = (item: number, _index: number) => `${item}`;
-
 const Header = ({ goBack }: { goBack: () => void }) => (
   <View style={styles.header}>
     <TouchableOpacity onPress={goBack}>
@@ -30,7 +28,7 @@ export const WrappedInstanceMethods = ({ navigation }: NavigationScreenConfigPro
   const scrollToBottom = () => {
     if (ref.current && ref.current.animatedComponent()) {
       ref.current.animatedComponent()
-        ._component._listRef._scrollRef.scrollToEnd({ animataed: true });
+        ._component._listRef._scrollRef.scrollToEnd({ animated: true });
     }
   };
 
@@ -64,6 +62,8 @@ export const WrappedInstanceMethods = ({ navigation }: NavigationScreenConfigPro
     </>
   );
 };
+
+const keyExtractor = (item: number, _index: number) => `${item}`;
 
 const data = Array(50).fill(0).map((_, i) => i);
 

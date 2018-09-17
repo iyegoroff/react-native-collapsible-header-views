@@ -6,51 +6,56 @@ import {
   CollapsibleHeaderProps
 } from 'react-native-collapsible-header-views';
 import { isIphoneX, getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { all } from 'cat-names';
 
-const keyExtractor = (item: number, _index: number) => `${item}`;
-const statusBarHeight = () => isIphoneX() ? getStatusBarHeight(false) : 0;
+export class ShowAndHide extends React.Component<NavigationScreenConfigProps, { text: string }> {
 
-const Header = ({
-  goBack,
-  showHeader,
-  hideHeader,
-  interpolatedHeaderTranslation
-}: { goBack: () => void } & CollapsibleHeaderProps) => (
+  public state = { text: '' };
+
+  private header = (props: CollapsibleHeaderProps) => (
     <Animated.View style={[
       styles.header,
-      { transform: [{ translateY: interpolatedHeaderTranslation(0, -statusBarHeight()) }] }
+      { transform: [{ translateY: props.interpolatedHeaderTranslation(0, -statusBarHeight()) }] }
     ]}>
-      <TouchableOpacity onPress={goBack}>
+      <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
         <View style={styles.backButton}>
           <Text style={styles.title}>{'<-'}</Text>
         </View>
       </TouchableOpacity>
       <TextInput
-        placeholder={'Click to show, submit/blur to hide'}
-        onFocus={showHeader}
-        onBlur={hideHeader}
+        placeholder={'click to show, \nsubmit/blur to hide, \ntype to find your cat name'}
+        multiline={true}
+        autoCapitalize={'words'}
+        onFocus={props.showHeader}
+        onBlur={props.hideHeader}
         style={styles.headerInput}
+        onChangeText={text => this.setState({ text })}
+        value={this.state.text}
       />
     </Animated.View>
-  );
+  )
 
-export const ShowAndHide = ({ navigation }: NavigationScreenConfigProps) => (
-  <CollapsibleHeaderFlatList
-    CollapsibleHeaderComponent={(props) => <Header {...props} goBack={() => navigation.goBack()} />}
-    headerHeight={100}
-    headerContainerBackgroundColor={'transparent'}
-    disableHeaderSnap={true}
-    contentContainerStyle={styles.container}
-    data={data}
-    renderItem={Item}
-    ItemSeparatorComponent={Separator}
-    keyExtractor={keyExtractor}
-  />
-);
+  render() {
+    return (
+      <CollapsibleHeaderFlatList
+        CollapsibleHeaderComponent={this.header}
+        headerHeight={100}
+        headerContainerBackgroundColor={'transparent'}
+        disableHeaderSnap={true}
+        contentContainerStyle={styles.container}
+        data={all.filter(cat => cat.includes(this.state.text))}
+        renderItem={Item}
+        ItemSeparatorComponent={Separator}
+        keyExtractor={keyExtractor}
+      />
+    );
+  }
+}
 
-const data = Array(50).fill(0).map((_, i) => i);
+const keyExtractor = (item: string, _index: number) => `${item}`;
+const statusBarHeight = () => isIphoneX() ? getStatusBarHeight(false) : 0;
 
-const Item = ({ item }: { item: number }) => (
+const Item = ({ item }: { item: string }) => (
   <Text style={styles.item}>{item}</Text>
 );
 

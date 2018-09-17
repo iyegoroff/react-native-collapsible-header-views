@@ -15,8 +15,6 @@ import {
 } from 'react-native-collapsible-header-views';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-const keyExtractor = (item: number, _index: number) => `${item}`;
-
 const Header = ({
   goBack,
   interpolatedHeaderTranslation
@@ -59,6 +57,8 @@ export const InterpolatedTranslation = ({ navigation }: NavigationScreenConfigPr
     />
   </>
 );
+
+const keyExtractor = (item: number, _index: number) => `${item}`;
 
 const data = Array(50).fill(0).map((_, i) => i);
 
