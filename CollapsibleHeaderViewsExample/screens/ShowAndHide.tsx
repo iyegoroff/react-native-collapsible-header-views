@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { NavigationScreenConfigProps } from 'react-navigation';
-import { StyleSheet, View, Text, TouchableOpacity, TextInput, Animated } from 'react-native';
+import * as React from 'react'
+import { NavigationScreenConfigProps } from 'react-navigation'
+import { StyleSheet, View, Text, TouchableOpacity, TextInput, Animated } from 'react-native'
 import {
   CollapsibleHeaderFlatList,
   CollapsibleHeaderProps
-} from 'react-native-collapsible-header-views';
-import { isIphoneX, getStatusBarHeight } from 'react-native-iphone-x-helper';
-import { all } from 'cat-names';
+} from 'react-native-collapsible-header-views'
+import { isIphoneX, getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { all } from 'cat-names'
 
 export class ShowAndHide extends React.Component<NavigationScreenConfigProps, { text: string }> {
 
-  public state = { text: '' };
+  public state = { text: '' }
 
   private header = (props: CollapsibleHeaderProps) => (
     <Animated.View style={[
@@ -48,20 +48,20 @@ export class ShowAndHide extends React.Component<NavigationScreenConfigProps, { 
         ItemSeparatorComponent={Separator}
         keyExtractor={keyExtractor}
       />
-    );
+    )
   }
 }
 
-const keyExtractor = (item: string, _index: number) => `${item}`;
-const statusBarHeight = () => isIphoneX() ? getStatusBarHeight(false) : 0;
+const keyExtractor = (item: string, _index: number) => `${item}`
+const statusBarHeight = () => isIphoneX() ? getStatusBarHeight(false) : 0
 
 const Item = ({ item }: { item: string }) => (
   <Text style={styles.item}>{item}</Text>
-);
+)
 
 const Separator = () => (
   <View style={styles.separator} />
-);
+)
 
 const styles = StyleSheet.create({
   container: {
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     margin: 3
   }
-});
+})

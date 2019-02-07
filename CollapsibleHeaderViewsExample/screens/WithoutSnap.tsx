@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { NavigationScreenConfigProps } from 'react-navigation';
-import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native';
-import { CollapsibleHeaderScrollView } from 'react-native-collapsible-header-views';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import * as React from 'react'
+import { NavigationScreenConfigProps } from 'react-navigation'
+import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native'
+import { CollapsibleHeaderScrollView } from 'react-native-collapsible-header-views'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 const Header = ({ goBack }: { goBack: () => void }) => (
   <View style={styles.header}>
@@ -13,7 +13,7 @@ const Header = ({ goBack }: { goBack: () => void }) => (
     </TouchableOpacity>
     <Text style={styles.title}>WITHOUT SNAP</Text>
   </View>
-);
+)
 
 export const WithoutSnap = ({ navigation }: NavigationScreenConfigProps) => (
   <>
@@ -33,7 +33,7 @@ export const WithoutSnap = ({ navigation }: NavigationScreenConfigProps) => (
       <View style={styles.content} />
     </CollapsibleHeaderScrollView>
   </>
-);
+)
 
 const styles = StyleSheet.create({
   content: {
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white'
   }
-});
+})

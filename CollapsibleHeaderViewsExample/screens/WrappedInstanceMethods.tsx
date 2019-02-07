@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { NavigationScreenConfigProps } from 'react-navigation';
-import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native';
-import { CollapsibleHeaderFlatList } from 'react-native-collapsible-header-views';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import * as React from 'react'
+import { NavigationScreenConfigProps } from 'react-navigation'
+import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native'
+import { CollapsibleHeaderFlatList } from 'react-native-collapsible-header-views'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 const Header = ({ goBack }: { goBack: () => void }) => (
   <View style={styles.header}>
@@ -13,24 +13,24 @@ const Header = ({ goBack }: { goBack: () => void }) => (
     </TouchableOpacity>
     <Text style={styles.title}>WRAPPED INSTANCE METHODS</Text>
   </View>
-);
+)
 
 export const WrappedInstanceMethods = ({ navigation }: NavigationScreenConfigProps) => {
-  const ref: React.RefObject<CollapsibleHeaderFlatList<number>> = React.createRef();
+  const ref: React.RefObject<CollapsibleHeaderFlatList<number>> = React.createRef()
 
   const scrollToTop = () => {
     if (ref.current && ref.current.animatedComponent()) {
       ref.current.animatedComponent()
-        ._component._listRef._scrollRef.scrollTo({ y: 0, animated: true });
+        ._component._listRef._scrollRef.scrollTo({ y: 0, animated: true })
     }
-  };
+  }
 
   const scrollToBottom = () => {
     if (ref.current && ref.current.animatedComponent()) {
       ref.current.animatedComponent()
-        ._component._listRef._scrollRef.scrollToEnd({ animated: true });
+        ._component._listRef._scrollRef.scrollToEnd({ animated: true })
     }
-  };
+  }
 
   const Item = ({ item }: { item: number }) => (
     <TouchableOpacity onPress={item % 2 ? scrollToTop : scrollToBottom}>
@@ -38,7 +38,7 @@ export const WrappedInstanceMethods = ({ navigation }: NavigationScreenConfigPro
         <Text style={styles.item}>{`Scroll to ${item % 2 ? 'top' : 'bottom'}`}</Text>
       </View>
     </TouchableOpacity>
-  );
+  )
 
   return (
     <>
@@ -60,16 +60,16 @@ export const WrappedInstanceMethods = ({ navigation }: NavigationScreenConfigPro
         keyExtractor={keyExtractor}
       />
     </>
-  );
-};
+  )
+}
 
-const keyExtractor = (item: number, _index: number) => `${item}`;
+const keyExtractor = (item: number, _index: number) => `${item}`
 
-const data = Array(50).fill(0).map((_, i) => i);
+const data = Array(50).fill(0).map((_, i) => i)
 
 const Separator = () => (
   <View style={styles.separator} />
-);
+)
 
 const styles = StyleSheet.create({
   item: {
@@ -105,4 +105,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white'
   }
-});
+})

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ViewStyle, StatusBar } from 'react-native';
-import { NavigationScreenConfigProps } from 'react-navigation';
+import * as React from 'react'
+import { View, StyleSheet, TouchableOpacity, Text, ViewStyle, StatusBar } from 'react-native'
+import { NavigationScreenConfigProps } from 'react-navigation'
 
-const route = (routeName: string) => ({ routeName, key: 'example' });
+const route = (routeName: string) => ({ routeName, key: 'example' })
 
 export const Home = ({ navigation }: NavigationScreenConfigProps) => {
   return (
@@ -53,15 +53,15 @@ export const Home = ({ navigation }: NavigationScreenConfigProps) => {
         </View>
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
 const buttonStyle: ViewStyle = {
   flex: 1,
   justifyContent: 'center',
   alignItems: 'center',
   width: '100%'
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -92,4 +92,4 @@ const styles = StyleSheet.create({
     ...buttonStyle,
     backgroundColor: '#FFDA6C'
   }
-});
+})

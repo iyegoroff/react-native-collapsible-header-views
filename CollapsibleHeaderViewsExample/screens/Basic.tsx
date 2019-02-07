@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { NavigationScreenConfigProps } from 'react-navigation';
-import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native';
-import { CollapsibleHeaderFlatList } from 'react-native-collapsible-header-views';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import * as React from 'react'
+import { NavigationScreenConfigProps } from 'react-navigation'
+import { StyleSheet, View, Text, TouchableOpacity, StatusBar } from 'react-native'
+import { CollapsibleHeaderFlatList } from 'react-native-collapsible-header-views'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 const Header = ({ goBack }: { goBack: () => void }) => (
   <View style={styles.header}>
@@ -13,7 +13,7 @@ const Header = ({ goBack }: { goBack: () => void }) => (
     </TouchableOpacity>
     <Text style={styles.title}>BASIC</Text>
   </View>
-);
+)
 
 export const Basic = ({ navigation }: NavigationScreenConfigProps) => (
   <>
@@ -34,19 +34,19 @@ export const Basic = ({ navigation }: NavigationScreenConfigProps) => (
       keyExtractor={keyExtractor}
     />
   </>
-);
+)
 
-const keyExtractor = (item: number, _index: number) => `${item}`;
+const keyExtractor = (item: number, _index: number) => `${item}`
 
-const data = Array(50).fill(0).map((_, i) => i);
+const data = Array(50).fill(0).map((_, i) => i)
 
 const Item = ({ item }: { item: number }) => (
   <Text style={styles.item}>{item}</Text>
-);
+)
 
 const Separator = () => (
   <View style={styles.separator} />
-);
+)
 
 const styles = StyleSheet.create({
   item: {
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white'
   }
-});
+})

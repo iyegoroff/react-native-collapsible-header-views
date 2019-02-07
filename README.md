@@ -1,6 +1,7 @@
 # react-native-collapsible-header-views
 [![npm version](https://badge.fury.io/js/react-native-collapsible-header-views.svg?t=1495378566925)](https://badge.fury.io/js/react-native-collapsible-header-views)
 [![CircleCI](https://circleci.com/gh/iyegoroff/react-native-collapsible-header-views.svg?style=svg)](https://circleci.com/gh/iyegoroff/react-native-collapsible-header-views)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/standard/standard)
 [![Dependency Status](https://david-dm.org/iyegoroff/react-native-collapsible-header-views.svg?t=1495378566925)](https://david-dm.org/iyegoroff/react-native-collapsible-header-views)
 [![devDependencies Status](https://david-dm.org/iyegoroff/react-native-collapsible-header-views/dev-status.svg)](https://david-dm.org/iyegoroff/react-native-collapsible-header-views?type=dev)
 [![typings included](https://img.shields.io/badge/typings-included-brightgreen.svg?t=1495378566925)](src/index.d.ts)

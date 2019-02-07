@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { NavigationScreenConfigProps } from 'react-navigation';
+import * as React from 'react'
+import { NavigationScreenConfigProps } from 'react-navigation'
 import {
   StyleSheet,
   View,
@@ -8,12 +8,12 @@ import {
   Animated,
   StatusBar,
   Dimensions
-} from 'react-native';
+} from 'react-native'
 import {
   CollapsibleHeaderFlatList,
   CollapsibleHeaderProps
-} from 'react-native-collapsible-header-views';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+} from 'react-native-collapsible-header-views'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 const Header = ({
   goBack,
@@ -33,7 +33,7 @@ const Header = ({
     </TouchableOpacity>
     <Text style={styles.title}>INTERPOLATED TRANSLATION</Text>
   </Animated.View>
-);
+)
 
 export const InterpolatedTranslation = ({ navigation }: NavigationScreenConfigProps) => (
   <>
@@ -56,19 +56,19 @@ export const InterpolatedTranslation = ({ navigation }: NavigationScreenConfigPr
       keyExtractor={keyExtractor}
     />
   </>
-);
+)
 
-const keyExtractor = (item: number, _index: number) => `${item}`;
+const keyExtractor = (item: number, _index: number) => `${item}`
 
-const data = Array(50).fill(0).map((_, i) => i);
+const data = Array(50).fill(0).map((_, i) => i)
 
 const Item = ({ item }: { item: number }) => (
   <Text style={styles.item}>{item}</Text>
-);
+)
 
 const Separator = () => (
   <View style={styles.separator} />
-);
+)
 
 const styles = StyleSheet.create({
   item: {
@@ -103,4 +103,4 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: 'white'
   }
-});
+})
