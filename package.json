@@ -9,8 +9,7 @@
     "postversion": "git push && git push --tags",
     "build": "rm -rf dist && mkdir dist && cp src/index.d.ts dist/index.d.ts && tsc -p src",
     "lint": "tslint -p src && tslint -p CollapsibleHeaderViewsExample",
-    "watch": "npm run build -- --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "npm run build -- --watch"
   },
   "keywords": [
     "react-native",

@@ -7,9 +7,9 @@ jobs:
     steps:
       - checkout
 
-      - run: npm i && npm run lint && npm run build
+      - run: yarn && yarn lint && yarn build
       
-      - run: cd CollapsibleHeaderViewsExample && npm i && npm run build
+      - run: cd CollapsibleHeaderViewsExample && yarn && yarn build
 
       - persist_to_workspace:
           root: .
