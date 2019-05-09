@@ -1,6 +1,6 @@
 {
   "name": "react-native-collapsible-header-views",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Set of react-native views with collapsible headers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
