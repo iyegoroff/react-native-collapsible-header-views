@@ -239,6 +239,10 @@ export const withCollapsibleHeader = <T extends ScrollViewProps>(
       return this.wrappedComponent.current
     }
 
+    public getNode = () => {
+      return this.wrappedComponent.current.getNode()
+    }
+
     public showHeader = (options: AnimationConfig | unknown) => {
       this.moveHeader(
         this.offsetValue - this.props.headerHeight,
