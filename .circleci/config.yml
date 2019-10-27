@@ -8,7 +8,7 @@ jobs:
       - checkout
 
       - run: yarn && yarn lint && yarn build
-      
+
       - run: cd CollapsibleHeaderViewsExample && yarn && yarn build
 
       - persist_to_workspace:

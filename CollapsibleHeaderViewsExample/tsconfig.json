@@ -7,6 +7,10 @@
     "outDir": "build",
     "jsx": "react-native",
     "lib": ["es6"],
-    "moduleResolution": "node"
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "types": [
+      "react-native"
+    ]
   }
 }
