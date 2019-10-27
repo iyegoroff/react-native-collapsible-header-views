@@ -12,7 +12,7 @@ module Props =
 
   type AnimationConfig =
     { animated: bool }
-  
+
   type CollapsibleHeaderProps =
     { interpolatedHeaderTranslation: (float -> float -> Animated.AnimatedInterpolation)
       showHeader: (AnimationConfig -> unit)
@@ -32,6 +32,7 @@ module Props =
     | HeaderContainerBackgroundColor of string
     | DisableHeaderSnap of bool
     | HeaderAnimationDuration of float
+    | ClipHeader of bool
     | Ref of Ref<CollapsibleHeaderView>
 
 

@@ -28,6 +28,7 @@ export type CollapsibleHeaderViewProps<T extends ScrollViewProps> = T & {
   readonly headerContainerBackgroundColor: string
   readonly disableHeaderSnap: boolean
   readonly headerAnimationDuration: number
+  readonly clipHeader: boolean
 }
 
 interface CollapsibleHeaderViewStyle {
@@ -140,6 +141,7 @@ export const withCollapsibleHeader = <T extends ScrollViewProps>(
         headerHeight,
         onScroll,
         headerContainerBackgroundColor,
+        clipHeader,
         ...props
       } = this.props as CollapsibleHeaderViewProps<ScrollViewProps>
 
@@ -153,7 +155,12 @@ export const withCollapsibleHeader = <T extends ScrollViewProps>(
 
       const Header = CollapsibleHeaderComponent as React.ComponentType<CollapsibleHeaderProps>
 
-      const styles = style(headerHeight, statusBarHeight, headerContainerBackgroundColor)
+      const styles = style(
+        headerHeight,
+        statusBarHeight,
+        headerContainerBackgroundColor,
+        clipHeader
+      )
 
       return (
         <View style={styles.fill}>
@@ -280,11 +287,16 @@ export const withCollapsibleHeader = <T extends ScrollViewProps>(
   }
 }
 
-const style = memoize(
-  (headerHeight: number, statusBarHeight: number, headerBackgroundColor: string) =>
+const style = memoize((
+  headerHeight: number,
+  statusBarHeight: number,
+  headerBackgroundColor: string,
+  clipHeader: boolean
+) =>
     StyleSheet.create<CollapsibleHeaderViewStyle>({
       fill: {
-        flex: 1
+        flex: 1,
+        overflow: clipHeader ? 'hidden' : undefined
       },
       header: {
         position: 'absolute',

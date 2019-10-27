@@ -59,7 +59,8 @@ hood.
   status bar container. Defaults to `'white'`;
 - `disableHeaderSnap?: boolean` - pass `true` to disable header snap animations. Defaults to `false`;
 - `headerAnimationDuration?: number` - duration of snap and `showHeader`, `hideHeader` animations.
-  Defaults to `350`.
+  Defaults to `350`;
+- `clipHeader?: boolean` - if `true` header will be clipped with `overflow: 'hidden'` style.
 
 Also some of `ScrollView` props have new defaults: `bounces` defaults to `false`, `overScrollMode`
 to `'never'` and `scrollEventThrottle` to `1`.
@@ -72,7 +73,7 @@ to `'never'` and `scrollEventThrottle` to `1`.
   opacity etc.;
 - `showHeader: (options: { animated: boolean } | unknown) => void` - pushes header down with animation
   enabled by default;
-- `hideHeader: (options: { animated: boolean } | unknown) => void` - pulls header up with animation 
+- `hideHeader: (options: { animated: boolean } | unknown) => void` - pulls header up with animation
   enabled by default.
 
 ### Methods
@@ -83,7 +84,7 @@ to `'never'` and `scrollEventThrottle` to `1`.
   to original component;
 - `showHeader: (options: { animated: boolean } | unknown) => void` - pushes header down with animation
   enabled by default;
-- `hideHeader: (options: { animated: boolean } | unknown) => void` - pulls header up with animation 
+- `hideHeader: (options: { animated: boolean } | unknown) => void` - pulls header up with animation
   enabled by default.
 
 #### withCollapsibleHeader

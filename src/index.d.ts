@@ -18,6 +18,7 @@ export type CollapsibleHeaderViewProps<T extends ScrollViewProps> = T & {
   readonly headerContainerBackgroundColor?: string
   readonly disableHeaderSnap?: boolean
   readonly headerAnimationDuration?: number
+  readonly clipHeader?: boolean
 }
 
 declare class CollapsibleHeaderView<T extends ScrollViewProps> extends React.Component<
