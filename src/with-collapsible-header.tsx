@@ -303,7 +303,6 @@ const style = memoize((
         top: 0,
         left: 0,
         right: 0,
-        height: headerHeight,
         paddingTop: statusBarHeight,
         backgroundColor: headerBackgroundColor
       },
