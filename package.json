@@ -1,6 +1,6 @@
 {
-  "name": "react-native-collapsible-header-views",
-  "version": "1.1.2",
+  "name": "react-native-collapsible-header-views2",
+  "version": "2.0.1",
   "description": "Set of react-native views with collapsible headers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
     "dist",
     "src"
   ],
-  "author": "iyegoroff <iegoroff@gmail.com>",
+  "author": "bhs <bhs.dev@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "react": "*",
@@ -38,11 +38,11 @@
     "fast-memoize": "^2.5.1"
   },
   "bugs": {
-    "url": "https://github.com/iyegoroff/react-native-collapsible-header-views/issues"
+    "url": "https://github.com/bhs324/react-native-collapsible-header-views/issues"
   },
-  "homepage": "https://github.com/iyegoroff/react-native-collapsible-header-views#readme",
+  "homepage": "https://github.com/bhs324/react-native-collapsible-header-views#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iyegoroff/react-native-collapsible-header-views.git"
+    "url": "git+https://github.com/bhs324/react-native-collapsible-header-views.git"
   }
 }
